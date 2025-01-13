@@ -1,0 +1,34 @@
+site_name: Anawaert Documentations
+site_url: https://docs.anawaert.tech
+theme:
+  name: material
+
+  palette:
+    # 主题色
+    primary: blue
+    # 强调色
+    ccent: indigo
+
+  # 语言设置，主语言为中文
+  language: zh
+
+  features:
+    # 开启导航选项卡并始终固定在顶部
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # 开启章节导航
+    - navigation.sections
+    # 展开章节导航
+    - navigation.expand
+    # 开启导航路径显示
+    - navigation.path
+    # 开启“返回顶部”
+    - navigation.top
+    # 集成概述
+    - navigation.indexes
+
+copyright: Copyright &copy; 2017-2025 Anawaert Studio
+  
+extra:
+  # 关闭生成器信息，但会在首页声明使用了 MkDocs
+  generator: false
