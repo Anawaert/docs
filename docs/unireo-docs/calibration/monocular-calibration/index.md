@@ -1,3 +1,10 @@
+---
+date:
+    created: 2025-01-13
+draft: false
+---
+
+
 # 单目标定
 
 ## 单目标定概述
@@ -8,28 +15,32 @@
 > * 2. 将保存的所有图像路径转为 `Python` 字符串列表，并利用 unireo 获取单目标定数据
 > * 3. 使用 `.` 成员运算符访问单目标定数据对象的成员数据
 
-## calib.mono_calib 子模块的使用
+## ` calib.mono_calib ` 子模块的使用
 &emsp;&emsp;在您的项目中，可以这样导入 `calib.mono_calib` 子模块：
 
 ``` Python
-# Python
 import unireo.calib.mono_calib as mono_calib
 ```
 
 &emsp;&emsp;`calib.mono_calib` 子模块具有三个公开静态函数，分别是：
 > * ` get_calib_data(chessboard_size: tuple, img_size: tuple, img_series: list) -> calib_data.MonoCalibData `
+
 > * ` undistort_img(img: np.ndarray, mono_calib_data: calib_data.MonoCalibData) -> numpy.ndarray `
+
 > * ` reprojection_error(mono_calib_data: calib_data.MonoCalibData) -> float `
 
 ### ` get_calib_data ` 函数的使用
 &emsp;&emsp;该函数用于获取单目标定数据，返回值为 ` calib_data.MonoCalibData ` 类型。该函数接受三个参数，分别是：
 > * `chessboard_size` ：一个 `tuple` 元组，表示棋盘格的内角点数，如 `(11, 8)`
+
 > * `img_size` ：一个 `tuple` 元组，表示用于标定的图像尺寸，如 `(1280, 720)`
+
 > * `img_series` ：一个 `list` 列表，表示所有标定图像的绝对路径所构成的列表，如` ['/home/1.png', '/home/2.png', '/home/3.png'] `
 
 ### ` undistort_img ` 函数的使用
 &emsp;&emsp;该函数用于校正**该相机**的画面畸变，并返回一个类型为 ` numpy.ndarray ` 的图像变量。该函数接受两个参数，分别是：
 > * `img` ：一个 ` numpy.ndarray ` 图像矩阵，表示原图像
+
 > * ` mono_calib_data ` ：一个 ` calib_data.MonoCalibData ` 类型的变量，表示已经获取到的单目标定数据
 
 ### ` reprojection_error ` 函数的使用
@@ -39,8 +50,6 @@ import unireo.calib.mono_calib as mono_calib
 &emsp;&emsp;示例：
 
 ``` Python
-# Python
-
 import glob
 import cv2
 import unireo.calib.mono_calib as mono_calib

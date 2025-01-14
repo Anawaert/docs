@@ -1,14 +1,14 @@
-site_name: Anawaert Documentations
+# 站点名称与链接
+site_name: Anawaert Documents
 site_url: https://docs.anawaert.tech
+
+# 仓库名称与链接
+repo_name: Anawaert/docs
+repo_url: https://github.com/Anawaert/docs
+
+# 主题设置
 theme:
   name: material
-
-  palette:
-    # 主题色
-    primary: blue
-    # 强调色
-    ccent: indigo
-
   # 语言设置，主语言为中文
   language: zh
 
@@ -25,10 +25,88 @@ theme:
     # 开启“返回顶部”
     - navigation.top
     # 集成概述
-    - navigation.indexes
+    # - navigation.indexes
+    # 开启代码块复制功能
+    - content.code.copy
+    # 开启内联高亮代码块
+    - content.code.annotate
+    # 开始搜索建议
+    - search.suggest
+
+  # 站点图标
+  icon:
+    logo: material/file-document
+
+  favicon: docs-favicon.png
+
+  # 偏好设置
+  palette:
+    # 日间模式的 Palette toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 当前：日间模式
+
+    # 夜间模式的 Palette toggle
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 当前：夜间模式
+
+# 配置 Markdown 扩展
+markdown_extensions:
+  # 代码块高亮
+  - pymdownx.highlight:
+      anchor_linenums: true
+      # 开启自动语言显示
+      auto_title: true
+      # 开启代码块行号
+      # linenums: true
+
+  # 可选读内容选项卡
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # 脚注
+  - footnotes
+
+  # 数据表格
+  - tables
+
+  # 详细内容
+  - admonition
+  - pymdownx.details
+
+  # 注解
+  - attr_list
+  - md_in_html
+
+  # 按键符号
+  - pymdownx.keys
+
+  # 扩展
+  - pymdownx.superfences
+
 
 copyright: Copyright &copy; 2017-2025 Anawaert Studio
   
 extra:
   # 关闭生成器信息，但会在首页声明使用了 MkDocs
   generator: false
+
+# 导航树
+nav:
+  - 首页: index.md
+
+  - unireo 文档: 
+    - unireo 文档首页: unireo-docs/index.md
+    - 快速开始: unireo-docs/quick-start.md
+    - 标定: 
+      - 标定概述: unireo-docs/calibration/index.md
+      - 单目标定: unireo-docs/calibration/monocular-calibration/index.md

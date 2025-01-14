@@ -1,3 +1,9 @@
+---
+date:
+    created: 2025-01-13
+draft: false
+---
+
 # 标定
 
 ## 标定概述
@@ -5,19 +11,18 @@
 
 &emsp;&emsp;相机标定一般分为单目标定、双目标定和手眼标定这三大类别，分别用于确定相机的内参、外参和不同坐标系之间的变换关系。而 unireo 目前已实现单目标定以及双目标定，即可获取相机的内参以及外参。
 
-## calib 子模块
+## `calib` 子模块
 &emsp;&emsp;在 unireo 中，`calib` 子模块负责实现标定数据的数据类型，并提供一些关于标定数据的操作方法。在您的项目中，可以这样导入 `calib` 子模块：
 
 ``` Python
-# Python
 import unireo.calib as calib
 ```
 
-## calib 子模块实现的标定数据类
+## `calib` 子模块实现的标定数据类
 
 &emsp;&emsp;`calib` 子模块中包含以下两个标定数据类型：
 
 > * `MonoCalibData` ：单目相机标定数据类，用于存储单目相机标定所需的数据
 > * `StereoCalibData` ：双目相机标定数据类，用于存储双目相机标定所需的数据
 
-&emsp;&emsp;但实际上，您往往并不需要知道这两个数据类型是如何构造与实现的，只需要知道这两个类的实例可以使用成员运算符 `.` 来访问即可。在关于 ` calib.mono_calib ` 和 ` calib.stereo_calib ` 子模块的介绍中，您将会看到为什么不需要它们的构造与实现了。
+&emsp;&emsp;但实际上，您往往并**不需要知道这两个数据类型是如何构造与实现的，只需要知道这两个类的实例可以使用成员运算符 `.` 来访问即可**（实际上， `MonoCalibData` 与 `StereoCalibData` 是定义在 ` calib.calib_data ` 子模块中的，而它们又分别包含许多类成员，每个类成员又是一个大型的 `numpy.ndarray` 数组）。在关于 ` calib.mono_calib ` 和 ` calib.stereo_calib ` 子模块的介绍中，您将会看到为什么不需要它们的构造与实现了。

@@ -1,13 +1,26 @@
 ---
 hide:
   - navigation
+date:
+    created: 2025-01-13
+draft: false
 ---
 
-# 首页
+# 欢迎来到 Anawaert Documents ！
 ## 站点概述
-&emsp;&emsp;本站主要提供由 Anawaert Studio 开发的软件文档，一般包括软件的使用简介、操作文档或（库的）开发者文档。站点的所有不同软件的文档均可通过顶部导航栏进行定位，所有文档内容均可通过顶部搜索栏进行查找。
+&emsp;&emsp;Anawaert Documents 主要提供由 Anawaert Studio 开发的各类软件文档，包括软件的简介、使用方法以及开发者文档。对于实用工具类软件而言，文档内容一般为软件的功能介绍，软件的安装、使用和问题排查；对于库或软件包类型的程序而言，文档内容一般为程序的功能介绍、开发者文档及 API 文档。
 
-&emsp;&emsp;由于站点处于建设初期，未来站点的功能或样式或将会出现一定的调整。本站点的 GitHub 仓库将在不久后开源，有需求者可届时访问本站的 GitHub 仓库以获取更多信息，或为文档内容给予建议或贡献。
+&emsp;&emsp;目前，Anawaert 正在编写 [**unireo**](https://github.com/Anawaert/unireo) 与 [**Anawaert KMS Activator**](https://github.com/Anawaert/WPF-KMS-Activator) 的文档，敬请期待更多 Anawaert Studio 出品软件的文档上架 Anawaert Documents ！
 
 ## 站点技术信息
 &emsp;&emsp;本站点使用 [squidfunk](https://github.com/squidfunk) 的 [Material for MkDocs](https://github.com/squidfunk/mkdocs-material) 框架进行站点的设计生成与`Markdown`的渲染，使用 [Windows Internet Information Services](https://learn.microsoft.com/en-us/iis/) 10.0 进行网站的发布与托管。
+
+## 站点关联
+&emsp;&emsp;Anawaert Studio 的技术博客：
+> * [**Anawaert Blog**](https://blog.anawaert.tech/)
+
+&emsp;&emsp;Anawaert Studio 主页（尚未竣工）：
+> * [**Anawaert**](https://www.anawaert.tech/)
+
+## 版权所有
+&emsp;&emsp;Copyright &copy; 2017-2025 Anawaert Studio.
