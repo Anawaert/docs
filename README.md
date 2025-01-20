@@ -14,7 +14,7 @@
 &emsp;&emsp;更多关于 Material for MkDocs 及本站点的配置方法，请参阅 [Material for MkDocs 配置文档](https://squidfunk.github.io/mkdocs-material/setup/) 。
 
 ## 反馈
-&emsp;&emsp;欢迎各位在 [Issues](https://github.com/Anawaert/docs/issues) 提出任何建议和意见，也可以发起 [Pull request](https://github.com/BYJRK/CommunityToolkit.Mvvm_ZeroToHero/pulls) 来贡献您的力量。
+&emsp;&emsp;欢迎各位在 [Issues](https://github.com/Anawaert/docs/issues) 提出任何建议和意见，也可以发起 [Pull request](https://github.com/Anawaert/docs/pulls) 来贡献您的力量。
 
 ## 版权所有
 &emsp;&emsp;Copyright &copy; 2017-2025 Anawaert Studio.
