@@ -237,6 +237,8 @@
         <a href="./" class="md-tabs__link">
           
   
+    
+  
   unireo 文档
 
         </a>
@@ -326,6 +328,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
     
       
         
@@ -343,16 +355,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   <span class="md-ellipsis">
     unireo 文档
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
@@ -361,119 +381,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    unireo 文档首页
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    unireo 文档首页
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      项目概述
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unireo_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      unireo 已实现的功能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unireo_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      unireo 近期计划开发的功能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unireo_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      unireo 所需的环境以及依赖
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unireo_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      unireo 项目地址
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      版权所有
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
               
             
               
@@ -505,6 +412,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
     
       
       
@@ -524,16 +441,24 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="calibration/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     标定
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
@@ -542,25 +467,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="calibration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    标定概述
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -700,7 +606,7 @@
 <h1 id="unireo">unireo 文档</h1>
 <h2 id="_1">项目概述</h2>
 <p>&emsp;&emsp;unireo 是一款使用 <code>Python</code> 开发，基于 OpenCV、NumPy 和若干 <code>Python</code> 内置 API 开发的小型计算机视觉 SDK，主要面向支持 UVC 协议的同步画面的 RGB 双目相机，未来也将逐步加入对使用 UVC 协议的异步画面的 RGB 双目相机或单目相机的支持。</p>
-<p>&emsp;&emsp;unireo 的名字取自 <strong>uni</strong>form 和 ste<strong>reo</strong>，意在为所有支持的双、单目相机提供过去需要几十甚至上百行代码才能完成的任务的简化 API，目前项目仍处于非常初期的阶段，但已经能满足部分使用需求。下面将列出目前 unireo 已支持的任务，同时也将列出 unireo 计划开发的功能以及 unireo 所需的开发环境与依赖。</p>
+<p>&emsp;&emsp;unireo 的名字取自 <strong>uni</strong>form 和 ste<strong>reo</strong>，意在为所有支持的双、单目相机提供过去需要几十甚至上百行代码才能完成的任务的简化 API 。目前项目仍处于非常初期的阶段，但已经能满足部分使用需求。下面将列出目前 unireo 已支持的任务，同时也将列出 unireo 计划开发的功能以及 unireo 所需的开发环境与依赖。</p>
 <h2 id="unireo_1">unireo 已实现的功能</h2>
 <blockquote>
 <ul>
@@ -750,6 +656,65 @@
 
 
 
+  <h2 id="__comments">评论</h2>
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="Anawaert/Discussions"
+        data-repo-id="R_kgDOMHPOog"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMHPOos4Cf-pv"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <!-- 同步 Giscus 主题与调色板 -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    // 在初始加载时设置调色板
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      // 指示 Giscus 设置主题
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    // 文档加载后注册事件处理程序
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          // 指示 Giscus 更改主题
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
                 
               </article>
             </div>
@@ -789,7 +754,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.indexes", "content.code.copy", "content.code.annotate", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
