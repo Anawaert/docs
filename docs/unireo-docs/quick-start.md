@@ -1,11 +1,16 @@
+---
+date:
+    created: 2025-01-13
+comments: true
+draft: false
+---
+
 # 快速开始
 
 ## 配置开发所需环境
-&emsp;&emsp;确保您的`Python`版本高于`Python` 3.6，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
+&emsp;&emsp;确保您的 `Python` 版本高于 `Python` 3.6，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
 
 ``` bash
-# bash
-
 # 检查 Python 版本
 python --version
 # 或
@@ -16,20 +21,19 @@ pip install numpy==1.23.0
 pip install opencv-python==4.9.0
 ```
 
-&emsp;&emsp;请注意：若您曾经通过编译 OpenCV 的 `C++` 库生成 OpenCV 的 `Python` 绑定，请**不要**在此处使用 `pip install opencv-python==4.9.0.80`，因为这样会使得通过 pip 安装的 OpenCV 覆盖原本使用编译生成的 OpenCV 的 `Python`绑定。
+!!! warning "易错配置"
+    &emsp;&emsp;若您曾经通过编译 OpenCV 的 `C++` 库生成 OpenCV 的 `Python` 绑定，请**不要**在此处使用 `pip install opencv-python==4.9.0.80` ，因为这样会使得通过 pip 安装的 OpenCV 覆盖原本使用编译生成的 OpenCV 的 `Python` 绑定。
 
 ## 通过 pip 包管理器安装 unireo
 &emsp;&emsp;在终端中，使用以下命令安装 unireo 模块：
 
 ``` bash
-# bash
 pip install unireo
 ```
 
 &emsp;&emsp;完成安装后，在终端中运行 `python` 或 `python3` 命令，在 `Python` 中尝试导入 unireo 来是检查否已正确安装：
 
-``` bash
-# Python
+``` Python
 import unireo
 ```
 
@@ -37,8 +41,6 @@ import unireo
 &emsp;&emsp;使用以下代码示例即可使用 unireo 对双目相机的画面进行拍摄：
 
 ``` Python
-# Python
-
 # 导入 unireo 模块中有关相机信息的子模块
 import unireo.cam_info as cam_info
 # 导入 unireo 模块中与错误码与异常处理相关的子模块

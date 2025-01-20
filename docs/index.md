@@ -3,6 +3,7 @@ hide:
   - navigation
 date:
     created: 2025-01-13
+comments: false
 draft: false
 ---
 
@@ -13,7 +14,7 @@ draft: false
 &emsp;&emsp;目前，Anawaert 正在编写 [**unireo**](https://github.com/Anawaert/unireo) 与 [**Anawaert KMS Activator**](https://github.com/Anawaert/WPF-KMS-Activator) 的文档，敬请期待更多 Anawaert Studio 出品软件的文档上架 Anawaert Documents ！
 
 ## 站点技术信息
-&emsp;&emsp;本站点使用 [squidfunk](https://github.com/squidfunk) 的 [Material for MkDocs](https://github.com/squidfunk/mkdocs-material) 框架进行站点的设计生成与`Markdown`的渲染，使用 [Windows Internet Information Services](https://learn.microsoft.com/en-us/iis/) 10.0 进行网站的发布与托管。
+&emsp;&emsp;本站点使用 [squidfunk](https://github.com/squidfunk) 的 [Material for MkDocs](https://github.com/squidfunk/mkdocs-material) 框架进行站点的设计生成与 `Markdown` 的渲染，使用 [Windows Internet Information Services](https://learn.microsoft.com/en-us/iis/) 10.0 进行网站的发布与托管。
 
 ## 站点关联
 &emsp;&emsp;Anawaert Studio 的技术博客：

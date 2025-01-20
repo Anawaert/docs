@@ -25,7 +25,7 @@ theme:
     # 开启“返回顶部”
     - navigation.top
     # 集成概述
-    # - navigation.indexes
+    - navigation.indexes
     # 开启代码块复制功能
     - content.code.copy
     # 开启内联高亮代码块
@@ -58,6 +58,9 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 当前：夜间模式
+  
+  # 启用覆盖
+  custom_dir: overrides
 
 # 配置 Markdown 扩展
 markdown_extensions:

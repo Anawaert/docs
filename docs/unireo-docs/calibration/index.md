@@ -1,6 +1,7 @@
 ---
 date:
     created: 2025-01-13
+comments: true
 draft: false
 ---
 
@@ -20,9 +21,10 @@ import unireo.calib as calib
 
 ## `calib` 子模块实现的标定数据类
 
-&emsp;&emsp;`calib` 子模块中包含以下两个标定数据类型：
+&emsp;&emsp;`calib` 子模块中可用以下两个标定数据类型：
 
 > * `MonoCalibData` ：单目相机标定数据类，用于存储单目相机标定所需的数据
 > * `StereoCalibData` ：双目相机标定数据类，用于存储双目相机标定所需的数据
 
-&emsp;&emsp;但实际上，您往往并**不需要知道这两个数据类型是如何构造与实现的，只需要知道这两个类的实例可以使用成员运算符 `.` 来访问即可**（实际上， `MonoCalibData` 与 `StereoCalibData` 是定义在 ` calib.calib_data ` 子模块中的，而它们又分别包含许多类成员，每个类成员又是一个大型的 `numpy.ndarray` 数组）。在关于 ` calib.mono_calib ` 和 ` calib.stereo_calib ` 子模块的介绍中，您将会看到为什么不需要它们的构造与实现了。
+!!! note "标定数据类型及 API 的封装性"
+    实际上，您往往并**不需要知道这两个数据类型是如何构造与实现的，只需要知道这两个类的实例对象可以使用成员运算符 `.` 来访问其中的成员数据即可**。确切地说， `MonoCalibData` 与 `StereoCalibData` 是定义在 ` calib.calib_data ` 子模块中的，通过 `__init__.py` 引入 `calib` 父模块中。而这些数据类型又分别包含许多类成员，每个类成员又是一个大型的 `numpy.ndarray` 数组。在关于单、双目标定以及 ` calib.mono_calib ` 和 ` calib.stereo_calib ` 子模块的介绍中，您将会看到为什么不需要它们的构造与实现了。

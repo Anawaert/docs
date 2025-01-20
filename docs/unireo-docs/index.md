@@ -1,6 +1,7 @@
 ---
 date:
     created: 2025-01-13
+comments: true
 draft: false
 ---
 
@@ -9,7 +10,7 @@ draft: false
 ## 项目概述
 &emsp;&emsp;unireo 是一款使用 `Python` 开发，基于 OpenCV、NumPy 和若干 `Python` 内置 API 开发的小型计算机视觉 SDK，主要面向支持 UVC 协议的同步画面的 RGB 双目相机，未来也将逐步加入对使用 UVC 协议的异步画面的 RGB 双目相机或单目相机的支持。
 
-&emsp;&emsp;unireo 的名字取自 **uni**form 和 ste**reo**，意在为所有支持的双、单目相机提供过去需要几十甚至上百行代码才能完成的任务的简化 API，目前项目仍处于非常初期的阶段，但已经能满足部分使用需求。下面将列出目前 unireo 已支持的任务，同时也将列出 unireo 计划开发的功能以及 unireo 所需的开发环境与依赖。
+&emsp;&emsp;unireo 的名字取自 **uni**form 和 ste**reo**，意在为所有支持的双、单目相机提供过去需要几十甚至上百行代码才能完成的任务的简化 API 。目前项目仍处于非常初期的阶段，但已经能满足部分使用需求。下面将列出目前 unireo 已支持的任务，同时也将列出 unireo 计划开发的功能以及 unireo 所需的开发环境与依赖。
 
 ## unireo 已实现的功能
 > * 以正确的后端与参数打开 UVC 相机
