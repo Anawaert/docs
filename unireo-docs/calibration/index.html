@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.anawaert.tech/unireo-docs/calibration/">
+        <link rel="canonical" href="https://docs.anawaert.com/unireo-docs/calibration/">
       
       
         <link rel="prev" href="../quick-start/">
@@ -578,14 +578,14 @@
 
 <h1 id="_1">标定</h1>
 <h2 id="_2">标定概述</h2>
-<p>&emsp;&emsp;相机标定是计算机视觉和图像处理中的一个关键步骤，旨在确定相机的内部参数（内参）和外部参数（外参），以便将二维图像坐标转换为三维世界坐标，因此，相机标定对于单目（单摄像头）和双目（双摄像头，通常为立体 RGB 相机）系统都有重要意义，但标定过程往需要一段略微复杂的代码，且容易出错。</p>
-<p>&emsp;&emsp;相机标定一般分为单目标定、双目标定和手眼标定这三大类别，分别用于确定相机的内参、外参和不同坐标系之间的变换关系。而 unireo 目前已实现单目标定以及双目标定，即可获取相机的内参以及外参。</p>
+<p>相机标定是计算机视觉和图像处理中的一个关键步骤，旨在确定相机的内部参数（内参）和外部参数（外参），以便将二维图像坐标转换为三维世界坐标，因此，相机标定对于单目（单摄像头）和双目（双摄像头，通常为立体 RGB 相机）系统都有重要意义，但标定过程往需要一段略微复杂的代码，且容易出错。</p>
+<p>相机标定一般分为单目标定、双目标定和手眼标定这三大类别，分别用于确定相机的内参、外参和不同坐标系之间的变换关系。而 unireo 目前已实现单目标定以及双目标定，即可获取相机的内参以及外参。</p>
 <h2 id="calib"><code>calib</code> 子模块</h2>
-<p>&emsp;&emsp;在 unireo 中，<code>calib</code> 子模块负责实现标定数据的数据类型，并提供一些关于标定数据的操作方法。在您的项目中，可以这样导入 <code>calib</code> 子模块：</p>
+<p>在 unireo 中，<code>calib</code> 子模块负责实现标定数据的数据类型，并提供一些关于标定数据的操作方法。在您的项目中，可以这样导入 <code>calib</code> 子模块：</p>
 <div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">unireo.calib</span> <span class="k">as</span> <span class="nn">calib</span>
 </code></pre></div>
 <h2 id="calib_1"><code>calib</code> 子模块实现的标定数据类</h2>
-<p>&emsp;&emsp;<code>calib</code> 子模块中可用以下两个标定数据类型：</p>
+<p><code>calib</code> 子模块中可用以下两个标定数据类型：</p>
 <blockquote>
 <ul>
 <li><code>MonoCalibData</code> ：单目相机标定数据类，用于存储单目相机标定所需的数据</li>
