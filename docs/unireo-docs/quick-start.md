@@ -8,7 +8,7 @@ draft: false
 # 快速开始
 
 ## 配置开发所需环境
-确保您的 `Python` 版本高于 `Python` 3.6，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
+确保您的 `Python` 版本不低于 `Python` 3.8，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
 
 ``` bash
 # 检查 Python 版本
