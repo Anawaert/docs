@@ -582,7 +582,7 @@
 <p>相机标定一般分为单目标定、双目标定和手眼标定这三大类别，分别用于确定相机的内参、外参和不同坐标系之间的变换关系。而 unireo 目前已实现单目标定以及双目标定，即可获取相机的内参以及外参。</p>
 <h2 id="calib"><code>calib</code> 子模块</h2>
 <p>在 unireo 中，<code>calib</code> 子模块负责实现标定数据的数据类型，并提供一些关于标定数据的操作方法。在您的项目中，可以这样导入 <code>calib</code> 子模块：</p>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">unireo.calib</span> <span class="k">as</span> <span class="nn">calib</span>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">unireo</span> <span class="kn">import</span> <span class="n">calib</span>
 </code></pre></div>
 <h2 id="calib_1"><code>calib</code> 子模块实现的标定数据类</h2>
 <p><code>calib</code> 子模块中可用以下两个标定数据类型：</p>

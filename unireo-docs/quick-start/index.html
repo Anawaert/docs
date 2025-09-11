@@ -663,7 +663,7 @@
 
 <h1 id="_1">快速开始</h1>
 <h2 id="_2">配置开发所需环境</h2>
-<p>确保您的 <code>Python</code> 版本高于 <code>Python</code> 3.6，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：</p>
+<p>确保您的 <code>Python</code> 版本不低于 <code>Python</code> 3.8，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：</p>
 <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 检查 Python 版本</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>--version
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 或</span>
@@ -686,45 +686,47 @@
 </code></pre></div>
 <h2 id="unireo">使用 unireo 来尝试打开您的双目相机并拍摄图像</h2>
 <p>使用以下代码示例即可使用 unireo 对双目相机的画面进行拍摄：</p>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 导入 unireo 模块中有关相机信息的子模块</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">unireo.cam_info</span> <span class="k">as</span> <span class="nn">cam_info</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 导入 unireo 模块中与错误码与异常处理相关的子模块</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span> <span class="nn">unireo.err_proc</span> <span class="k">as</span> <span class="nn">err_proc</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 导入 OpenCV 模块</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kn">import</span> <span class="nn">cv2</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 设定相机启动参数 params，并将其传给 Camera 类的构造函数，最后打开相机</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">params</span> <span class="o">=</span> <span class="n">cam_info</span><span class="o">.</span><span class="n">InitParameters</span><span class="p">()</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">camera</span> <span class="o">=</span> <span class="n">cam_info</span><span class="o">.</span><span class="n">Camera</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">camera</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="c1"># 使用 Camera 类的 grab_frame() 方法来抓取一帧图像，该函数会返回一个错误码</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="c1"># 当错误码并非 GRAB_IMAGE_SUCCESS 时，即未成功抓取图像时，说明相机打开错误，即退出循环</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">if</span> <span class="n">camera</span><span class="o">.</span><span class="n">grab_frame</span><span class="p">()</span> <span class="o">!=</span> <span class="n">err_proc</span><span class="o">.</span><span class="n">ErrCode</span><span class="o">.</span><span class="n">GRAB_IMAGE_SUCCESS</span><span class="p">:</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to Read Image from Camera&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="k">break</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="c1"># 使用 Camera 类的 get_img() 方法来读出抓取到的图像</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="c1"># LEFT_IMAGE 和 RIGHT_IMAGE 分别代表左、右图像，这两个变量 Flag 都在 cam_info 的 GrabbedImageType 类中定义</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">get_img</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">GrabbedImageType</span><span class="o">.</span><span class="n">LEFT_IMAGE</span><span class="p">)</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="n">right</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">get_img</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">GrabbedImageType</span><span class="o">.</span><span class="n">RIGHT_IMAGE</span><span class="p">)</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="c1"># 使用 OpenCV 显示读出画面</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Left&#39;</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Right&#39;</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    <span class="c1"># 使用 Camera 类的 get_stereo_img_saved() 方法来读出抓取到的图像</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    <span class="c1"># 该函数需要传入四个参数，分别是：</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    <span class="c1"># 1. 图像要保存的格式，如 JPG 或 PNG（推荐）格式</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    <span class="c1"># 2. 双目相机左目画面的保存路径，如&#39;/home/left&#39;，前提是该文件夹已经存在，否则无法保存</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    <span class="c1"># 3. 双目相机右目画面的保存路径，如&#39;/home/right&#39;，前提是该文件夹已经存在，否则无法保存</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    <span class="c1"># 4. 需要保存画面时按下的键盘按键，如s键</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    <span class="n">camera</span><span class="o">.</span><span class="n">get_stereo_img_saved</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">SavedImageFormat</span><span class="o">.</span><span class="n">IMG_FMT_PNG</span><span class="p">,</span> <span class="s1">&#39;/home/left&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/right&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="c1"># 若退出主循环，需要关闭所有窗口并且释放相机占用资源</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">camera</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 导入 OpenCV 模块</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">cv2</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 导入 unireo 模块中有关相机信息的子模块</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span> <span class="nn">unireo</span> <span class="kn">import</span> <span class="n">cam_info</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># 导入 unireo 模块中与错误码与异常处理相关的子模块</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kn">from</span> <span class="nn">unireo</span> <span class="kn">import</span> <span class="n">err_proc</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># 设定相机启动参数 params，并将其传给 Camera 类的构造函数，最后打开相机</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">params</span> <span class="o">=</span> <span class="n">cam_info</span><span class="o">.</span><span class="n">InitParameters</span><span class="p">()</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">camera</span> <span class="o">=</span> <span class="n">cam_info</span><span class="o">.</span><span class="n">Camera</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">camera</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="c1"># 使用 Camera 类的 grab_frame() 方法来抓取一帧图像，该函数会返回一个错误码</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="c1"># 当错误码并非 GRAB_IMAGE_SUCCESS 时，即未成功抓取图像时，说明相机打开错误，即退出循环</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="k">if</span> <span class="n">camera</span><span class="o">.</span><span class="n">grab_frame</span><span class="p">()</span> <span class="o">!=</span> <span class="n">err_proc</span><span class="o">.</span><span class="n">ErrCode</span><span class="o">.</span><span class="n">GRAB_IMAGE_SUCCESS</span><span class="p">:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to Read Image from Camera&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="k">break</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="c1"># 使用 Camera 类的 get_img() 方法来读出抓取到的图像</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="c1"># LEFT_IMAGE 和 RIGHT_IMAGE 分别代表左、右图像，这两个变量 Flag 都在 cam_info 的 GrabbedImageType 类中定义</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="n">left</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">get_img</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">GrabbedImageType</span><span class="o">.</span><span class="n">LEFT_IMAGE</span><span class="p">)</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="n">right</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">get_img</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">GrabbedImageType</span><span class="o">.</span><span class="n">RIGHT_IMAGE</span><span class="p">)</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="c1"># 使用 OpenCV 显示读出画面</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Left&#39;</span><span class="p">,</span> <span class="n">left</span><span class="p">)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Right&#39;</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    <span class="c1"># 使用 Camera 类的 get_stereo_img_saved() 方法来读出抓取到的图像</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    <span class="c1"># 该函数需要传入四个参数，分别是：</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    <span class="c1"># 1. 图像要保存的格式，如 JPG 或 PNG（推荐）格式</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    <span class="c1"># 2. 双目相机左目画面的保存路径，如&#39;/home/left&#39;，前提是该文件夹已经存在，否则无法保存</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    <span class="c1"># 3. 双目相机右目画面的保存路径，如&#39;/home/right&#39;，前提是该文件夹已经存在，否则无法保存</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    <span class="c1"># 4. 需要保存画面时按下的键盘按键，如s键</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    <span class="n">camera</span><span class="o">.</span><span class="n">get_stereo_img_saved</span><span class="p">(</span><span class="n">cam_info</span><span class="o">.</span><span class="n">SavedImageFormat</span><span class="o">.</span><span class="n">IMG_FMT_PNG</span><span class="p">,</span> <span class="s1">&#39;/home/left&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/right&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1"># 若退出主循环，需要关闭所有窗口并且释放相机占用资源</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">camera</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="_3">深入使用</h2>
 <p>若想探索 unireo 的更多 API 与功能，请继续阅读，查阅更多的模块与 API 的使用方法。</p>
