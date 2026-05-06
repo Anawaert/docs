@@ -8,7 +8,7 @@ draft: false
 # 快速开始
 
 ## 配置开发所需环境
-确保您的 `Python` 版本不低于 `Python` 3.8，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
+确保您的 Python 版本不低于 Python 3.8，且已安装最新版本的 pip 包管理器，并完成 OpenCV 和 NumPy 库的安装。若仍未安装上述模块，请在终端中执行以下命令：
 
 ``` bash
 # 检查 Python 版本
@@ -22,7 +22,7 @@ pip install opencv-python==4.9.0
 ```
 
 !!! warning "易错配置"
-    若您曾经通过编译 OpenCV 的 `C++` 库生成 OpenCV 的 `Python` 绑定，请**不要**在此处使用 `pip install opencv-python==4.9.0.80` ，因为这样会使得通过 pip 安装的 OpenCV 覆盖原本使用编译生成的 OpenCV 的 `Python` 绑定。
+    若您曾经通过编译 OpenCV 的 C++ 库生成 OpenCV 的 Python 绑定，请**不要**在此处使用 `pip install opencv-python==4.9.0.80` ，因为这样会使得通过 pip 安装的 OpenCV 覆盖原本使用编译生成的 OpenCV 的 Python 绑定。
 
 ## 通过 pip 包管理器安装 unireo
 在终端中，使用以下命令安装 unireo 模块：
@@ -31,7 +31,7 @@ pip install opencv-python==4.9.0
 pip install unireo
 ```
 
-完成安装后，在终端中运行 `python` 或 `python3` 命令，在 `Python` 中尝试导入 unireo 来是检查否已正确安装：
+完成安装后，在终端中运行 `python` 或 `python3` 命令，在 Python 中尝试导入 unireo 来是检查否已正确安装：
 
 ``` Python
 import unireo
@@ -41,12 +41,14 @@ import unireo
 使用以下代码示例即可使用 unireo 对双目相机的画面进行拍摄：
 
 ``` Python
-# 导入 unireo 模块中有关相机信息的子模块
-import unireo.cam_info as cam_info
-# 导入 unireo 模块中与错误码与异常处理相关的子模块
-import unireo.err_proc as err_proc
 # 导入 OpenCV 模块
 import cv2
+
+# 导入 unireo 模块中有关相机信息的子模块
+from unireo import cam_info
+# 导入 unireo 模块中与错误码与异常处理相关的子模块
+from unireo import err_proc
+
 
 # 设定相机启动参数 params，并将其传给 Camera 类的构造函数，最后打开相机
 params = cam_info.InitParameters()

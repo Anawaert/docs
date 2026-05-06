@@ -97,7 +97,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 
-copyright: Copyright &copy; 2017-2025 Anawaert Studio
+copyright: Copyright &copy; 2017-2026 Anawaert Studio
   
 extra:
   # 关闭生成器信息，但会在首页声明使用了 MkDocs

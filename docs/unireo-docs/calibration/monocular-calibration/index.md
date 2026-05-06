@@ -5,22 +5,20 @@ comments: true
 draft: false
 ---
 
-
 # 单目标定
-
 ## 单目标定概述
 单目相机标定是一种通过捕获不同视角下的标定板图像，利用这些图像计算相机内部参数（如焦距、光学中心等）和畸变系数的过程。通过将相机固定在不同的位置和角度，从多个方向拍摄标定板的照片，分析这些照片中图案的几何变形，并使用特定的算法进行计算，即可得到相机的内部参数和畸变系数。这些参数对于校正相机视图中的畸变非常重要，也是进行精确图像测量和 3D 重建的基础。
 
 unireo 是借助 OpenCV，基于张正友标定法实现的单目标定，标定过程简单且精确，标定所需步骤如下：
-> * 使用相机从不同角度拍摄（棋盘格）标定板约20-30张图像
-> * 将保存的所有图像路径转为 `Python` 字符串列表，并利用 unireo 获取单目标定数据
+> * 使用相机从不同角度拍摄（棋盘格）标定板约 20 至 30 张图像
+> * 将保存的所有图像路径转为 Python 字符串列表，并利用 unireo 获取单目标定数据
 > * 使用 `.` 成员运算符访问单目标定数据对象的成员数据
 
 ## ` calib.mono_calib ` 子模块
 在您的项目中，可以这样导入 `calib.mono_calib` 子模块：
 
 ``` Python
-import unireo.calib.mono_calib as mono_calib
+from unireo import mono_calib
 ```
 
 `calib.mono_calib` 子模块具有三个公开静态函数，分别是：
@@ -39,7 +37,9 @@ import unireo.calib.mono_calib as mono_calib
 示例：
 ``` Python
 import glob
-import unireo.calib.mono_calib as mono_calib
+
+from unireo import mono_calib
+
 
 # 假定所有拍摄的标定图像位于 "/home/img/" 目录下
 # 使用 glob 将 "/home/img/" 目录下所有 PNG 格式的图像整理成字符串数组
@@ -61,7 +61,9 @@ print(mono_calib_data.camera_matrix)
 ``` Python
 import glob
 import cv2
-import unireo.calib.mono_calib as mono_calib
+
+from unireo import mono_calib
+
 
 # 假定所有拍摄的标定图像位于 "/home/img/" 目录下
 # 使用 glob 将 "/home/img/" 目录下所有 PNG 格式的图像整理成字符串数组
@@ -92,7 +94,9 @@ cv2.destroyAllWindows()
 ``` Python
 import glob
 import cv2
-import unireo.calib.mono_calib as mono_calib
+
+from unireo import mono_calib
+
 
 # 假定所有拍摄的标定图像位于 "/home/img/" 目录下
 # 使用 glob 将 "/home/img/" 目录下所有 PNG 格式的图像整理成字符串数组

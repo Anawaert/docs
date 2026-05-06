@@ -16,7 +16,7 @@ draft: false
 在 unireo 中，`calib` 子模块负责实现标定数据的数据类型，并提供一些关于标定数据的操作方法。在您的项目中，可以这样导入 `calib` 子模块：
 
 ``` Python
-import unireo.calib as calib
+from unireo import calib
 ```
 
 ## `calib` 子模块实现的标定数据类
